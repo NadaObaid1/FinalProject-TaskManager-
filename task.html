@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager - Tasks</title>
+    <link rel="stylesheet" href="./css/task.css">
+    <link rel="icon" type="logo" href="./assets/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"><img src="./assets/logo.png" alt="Task Manager"></div>
+            <nav>
+                <ul>
+                    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                    <li><a href="#" id="login"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Main Content Section -->
+        <main>
+            <!-- Task Display Section -->
+            <section class="task-display">
+                <h2 class="tasks-header">
+                    <i class="fas fa-tasks"></i> Your Tasks
+                </h2>                
+                <table id="task-list">
+                    <thead>
+                        <tr>
+                            <th>Task Name</th>
+                            <th>Deadline</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Task items will be dynamically added here -->
+                        <tr class="task-item">
+                            <td class="task-name">Design Homepage</td>
+                            <td class="task-deadline">2024-10-25</td>
+                            <td class="task-status">Overdue</td>
+                            <td>
+                                <button class="edit-task">Edit</button>
+                                <button class="delete-task">Delete</button>
+                            </td>
+                        </tr>
+                        <tr class="task-item">
+                            <td class="task-name">Design Homepage</td>
+                            <td class="task-deadline">2024-10-25</td>
+                            <td class="task-status">Overdue</td>
+                            <td>
+                                <button class="edit-task">Edit</button>
+                                <button class="delete-task">Delete</button>
+                            </td>
+                        </tr>
+                        <tr class="task-item">
+                            <td class="task-name">Develop API</td>
+                            <td class="task-deadline">2024-10-30</td>
+                            <td class="task-status">2 Days Left</td>
+                            <td>
+                                <button class="edit-task">Edit</button>
+                                <button class="delete-task">Delete</button>
+                            </td>
+                        </tr>
+                        <tr class="task-item">
+                            <td class="task-name">Develop API</td>
+                            <td class="task-deadline">2024-10-30</td>
+                            <td class="task-status">2 Days Left</td>
+                            <td>
+                                <button class="edit-task">Edit</button>
+                                <button class="delete-task">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Task Manager. All rights reserved.</p>
+        <p>
+            <a href="privacy.html">Privacy Policy</a> |
+            <a href="terms.html">Terms of Service</a>
+        </p>
+    </footer>        
+</body>
+</html>
