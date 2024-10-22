@@ -1,4 +1,4 @@
- .addtask {
+.addtask {
     background-color: #e6c0bd;
     font-family: Arial, sans-serif;
     display: flex;
@@ -19,9 +19,9 @@
 }
 
 .divimg img {
-    width: 100%; /* تصغير حجم الصورة لتتناسب مع العرض */
+    width: 100%; /* Decreasing image size to fit with width */
     height: auto;
-    border-radius: 10px; /* زوايا مستديرة للصورة */
+    border-radius: 10px; /* Circular angles for the image */
 }
 
 .info {
@@ -32,11 +32,11 @@
 }
 
 .info h1 {
-    font-family: 'Arial', sans-serif; /* تغيير الخط */
-    color: #4f4a46; /* لون العنوان */
-    font-size: 36px; /* حجم الخط */
-    font-weight: bold; /* جعل الخط سميكًا */
-    margin-bottom: 20px; /* مسافة تحت العنوان */
+    font-family: 'Arial', sans-serif; /*  Changing font type */
+    color: #4f4a46; /* Heading color  */
+    font-size: 36px; /*  Font size */
+    font-weight: bold; /* Make font fold */
+    margin-bottom: 20px; /* Space under heading */
 }
 
 .info label {
