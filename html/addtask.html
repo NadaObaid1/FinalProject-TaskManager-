@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="logo" href="../assets/images/logo.png">
+</head>
+<body class="addtask">
+    <div class="formdata">
+        <div class="divimg">
+            <img src="../assets/images/form.png" alt="Task Image"/>
+        </div>
+        <div class="info">
+            <h1>Add Task</h1>
+            <div>
+                <label for="task-name">Task name</label>
+                <input type="text" id="task-name" placeholder="Enter task name"/>
+            </div>
+            <div>
+                <label for="task-date">Task Date</label>
+                <input type="text" id="task-date" placeholder="Select task date"/>
+            </div>
+            <div>
+                <label for="task-completion">Task completion time</label>
+                <input type="time" id="task-completion"/>
+            </div>
+            <a href="../html/task.html">
+                <button id="add-task-btn">Add Task</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- Flatpickr Library -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- JavaScript File -->
+    <script src="../js/script.js"></script>
+</body>
+</html>
