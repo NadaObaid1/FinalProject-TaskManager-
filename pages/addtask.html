@@ -3,9 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Task Tracker with Calendar</title>
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
-    <h1>Add Task</h1>
+<body class="addtask">
+
+    <div class="formdata">
+        <div class="divimg">
+            <img src="../assets/form.png" alt="Task Image"/>
+        </div>
+        <div class="info">
+            <h1>Add Task</h1>
+            <div>
+                <label for="task-name">Task name</label>
+                <input type="text" id="task-name" placeholder="Enter task name"/>
+            </div>
+            <div>
+                <label for="task-date">Task Date</label>
+                <input type="text" id="task-date" placeholder="Select task date"/>
+            </div>
+            <div>
+                <label for="task-completion">Task completion time</label>
+                <input type="time" id="task-completion"/>
+            </div>
+            <button id="add-task-btn">Add Task</button>
+        </div>
+    </div>
+
+    <!-- رابط مكتبة Flatpickr -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- رابط ملف JavaScript المخصص -->
+    <script src="../script.js"></script>
 </body>
 </html>

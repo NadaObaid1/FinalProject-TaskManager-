@@ -1,0 +1,107 @@
+ .addtask {
+    background-color: #e6c0bd;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.formdata{
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 80%;
+    max-width: 1000px;
+}
+
+.divimg img {
+    width: 100%; /* تصغير حجم الصورة لتتناسب مع العرض */
+    height: auto;
+    border-radius: 10px; /* زوايا مستديرة للصورة */
+}
+
+.info {
+    width: 50%;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+}
+
+.info h1 {
+    font-family: 'Arial', sans-serif; /* تغيير الخط */
+    color: #4f4a46; /* لون العنوان */
+    font-size: 36px; /* حجم الخط */
+    font-weight: bold; /* جعل الخط سميكًا */
+    margin-bottom: 20px; /* مسافة تحت العنوان */
+}
+
+.info label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.info input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.info input[type="time"] {
+    padding: 5px;
+    font-size: 14px;
+}
+
+
+.flatpickr-calendar {
+    background-color: #f8e4e2; 
+}
+
+.flatpickr-weekday {
+    color: #c3746f; 
+}
+
+
+.flatpickr-day {
+    color: #a85754; 
+}
+
+.flatpickr-day.selected {
+    background-color: #d1827e; 
+    color: #fff; 
+}
+
+.flatpickr-day:hover {
+    background-color: #e0a5a0; 
+    color: #fff; 
+}
+.flatpickr-weekdays {
+    background-color: #f3d1cf; 
+}
+
+#add-task-btn:hover {
+    background-color: #c3746f; 
+}
+label, input {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px; 
+}
+
+#add-task-btn {
+    background-color: #d1827e; 
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 16px;
+    cursor: pointer; 
+    margin-top: 20px; 
+}
