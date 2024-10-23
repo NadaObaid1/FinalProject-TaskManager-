@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.contact-us {
+    padding: 60px;
+}
+
+.contact-us h2 {
+    margin-bottom: 20px;
+}
+
+.contact-us form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.contact-us form label {
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.contact-us form input,
+.contact-us form textarea {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 40%;
+}
+
+.contact-us form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 25px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    -ms-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    width: fit-content;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.contact-us form input[type="submit"]:hover {
+    background-color: white;
+    border: 1px solid #a85754;
+    color: #a85754;
+}
+
+.contact-us img {
+    position: absolute;
+    top: 220px;
+    right: 0;
+    opacity: 0;
+    animation: fade-in 5s infinite ease-in-out;
+    -webkit-animation: fade-in 5s infinite ease-in-out;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.footer {
+    background-color: #a06969;
+    text-align: center;
+    border-top: 1px solid #e9ecef;
+    width: 100%;
+    position: absolute;
+    bottom: -248px;
+    
+    overflow-x: hidden; 
+}
+
+.footer p {
+    color: #333; 
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none; 
+}
+
+.footer a:hover {
+    text-decoration: underline; 
+}
