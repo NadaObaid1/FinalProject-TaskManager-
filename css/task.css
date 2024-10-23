@@ -166,3 +166,27 @@ nav ul li a:hover {
 .footer a:hover {
     text-decoration: underline; 
 }
+/* Button Styling */
+#add-task-btn {
+    background-color: #a06969;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px 0;
+}
+
+#add-task-btn:hover {
+    background-color:#8e5757;
+}
+
+/* Align the button to the right */
+.task-controls {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    text-decoration: none;
+}
