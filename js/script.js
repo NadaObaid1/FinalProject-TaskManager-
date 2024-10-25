@@ -11,14 +11,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const taskName = document.getElementById('task-name').value;
             const taskDate = document.getElementById('task-date').value;
+            const taskCompletion = document.getElementById('task-completion').value;
 
-            if (taskName === '' || taskDate === '') {
-                alert('Task Name and Date are required!');
+            if (taskName === '' || taskDate === ''|| taskCompletion==='') {
+                alert('Task Name, Date, and Time are required!');
                 return;
             }
 
             const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-            tasks.push({ name: taskName, date: taskDate, status: 'Pending' });
+            tasks.push({ name: taskName, date: taskDate,time:taskCompletion, status: 'Pending' });
             localStorage.setItem('tasks', JSON.stringify(tasks));
 
             alert('Task added successfully!');
@@ -28,3 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error("Add Task button not found");
     }
 });
+
+
+
+

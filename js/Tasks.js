@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 const dateCell = document.createElement('td');
                 dateCell.className = 'task-deadline';
-                dateCell.textContent = task.date;
+                dateCell.textContent = `${task.date} ${task.time}`;
                 newRow.appendChild(dateCell);
 
                 const statusCell = document.createElement('td');
@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 const actionCell = document.createElement('td');
                 actionCell.className = 'task-actions';
-                newRow.appendChild(actionCell);
 
                 const editBtn = document.createElement('button');
                 editBtn.textContent = 'Edit';
@@ -38,16 +37,37 @@ document.addEventListener('DOMContentLoaded', function () {
                 const deleteBtn = document.createElement('button');
                 deleteBtn.textContent = 'Delete';
                 deleteBtn.className = 'delete-task';
-                deleteBtn.addEventListener('click', () => deleteTask(index)); 
+                deleteBtn.addEventListener('click', () => deleteTask(index));
                 actionCell.appendChild(deleteBtn);
 
                 const toggleBtn = document.createElement('button');
                 toggleBtn.textContent = 'Toggle Status';
                 toggleBtn.className = 'toggle-task';
-                toggleBtn.addEventListener('click', () => toggleTaskStatus(index)); 
+                toggleBtn.addEventListener('click', () => toggleTaskStatus(index));
                 actionCell.appendChild(toggleBtn);
 
+                newRow.appendChild(actionCell);
+
+                // حساب وعرض الوقت المتبقي
+                const timeLeftCell = document.createElement('td');
+                const taskDateTime = new Date(`${task.date}T${task.time}`);
+                const now = new Date();
+                const timeDiff = taskDateTime - now;
+
+                if (timeDiff > 0) {
+                    const daysLeft = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+                    const hoursLeft = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutesLeft = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+                    timeLeftCell.textContent = `${daysLeft}d ${hoursLeft}h ${minutesLeft}m`;
+                } else {
+                    timeLeftCell.textContent = 'Overdue';
+                    newRow.style.backgroundColor = 'rgba(255, 0, 0, 0.5)'; // لون أحمر فاتح بشفافية
+
+                }
+                
+                newRow.appendChild(timeLeftCell);
                 tableBody.appendChild(newRow);
+
             });
         };
 
@@ -56,7 +76,6 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem('tasks', JSON.stringify(tasks));
             renderTasks(); 
         };
-
 
         const toggleTaskStatus = (index) => {
             tasks[index].status = tasks[index].status === 'Pending' ? 'Completed' : 'Pending'; 
