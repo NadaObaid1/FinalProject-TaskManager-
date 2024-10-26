@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 editBtn.textContent = 'Edit';
                 editBtn.className = 'edit-task';
                 actionCell.appendChild(editBtn);
+                editBtn.addEventListener('click', () => editTask(index));
 
                 const deleteBtn = document.createElement('button');
                 deleteBtn.textContent = 'Delete';
@@ -48,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 newRow.appendChild(actionCell);
 
-                // حساب وعرض الوقت المتبقي
+                // Calculation of time left
                 const timeLeftCell = document.createElement('td');
                 const taskDateTime = new Date(`${task.date}T${task.time}`);
                 const now = new Date();
@@ -60,9 +61,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     const minutesLeft = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
                     timeLeftCell.textContent = `${daysLeft}d ${hoursLeft}h ${minutesLeft}m`;
                 } else {
-                    timeLeftCell.textContent = 'Overdue';
-                    newRow.style.backgroundColor = 'rgba(255, 0, 0, 0.5)'; // لون أحمر فاتح بشفافية
-
+                    timeLeftCell.textContent = 'No Time Left';
+                    statusCell.textContent = 'Overdue';
+                    newRow.style.backgroundColor = 'rgba(255, 0, 0, 0.5)'; // Light red color with opacity
+                    editBtn.style.cursor = 'not-allowed';
+                    toggleBtn.style.cursor = 'not-allowed';
+                }
+                if(tasks[index].status === 'Completed') {
+                    newRow.style.backgroundColor = 'rgba(0, 255, 0, 0.5)'; // Light green color with opacity
+                    timeLeftCell.innerHTML = `Task is Completed`;
+                    editBtn.style.cursor = 'not-allowed';
+                    nameCell.innerHTML = `<del>${task.name}</del>`;
                 }
                 
                 newRow.appendChild(timeLeftCell);
@@ -81,6 +90,23 @@ document.addEventListener('DOMContentLoaded', function () {
             tasks[index].status = tasks[index].status === 'Pending' ? 'Completed' : 'Pending'; 
             localStorage.setItem('tasks', JSON.stringify(tasks)); 
             renderTasks(); 
+        };
+
+        const editTask = (index) => {
+            const whatToEdit = prompt('What you want to edit?');
+            if(whatToEdit.includes('Name') || whatToEdit.includes('name')) {
+                tasks[index].name = prompt('Enter new name:', tasks[index].name);
+                localStorage.setItem('tasks', JSON.stringify(tasks));
+                renderTasks();
+            }
+            else if(whatToEdit.includes('Date') || whatToEdit.includes('date')) {
+                tasks[index].date = prompt('Enter new date:', tasks[index].date);
+                localStorage.setItem('tasks', JSON.stringify(tasks));
+                renderTasks();
+            }
+            else {
+                alert('Invalid input! Please enter "Name" or "Date" to edit.');
+            }
         };
 
         renderTasks();
